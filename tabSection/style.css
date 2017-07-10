@@ -1,0 +1,11 @@
+body{margin: 0; padding: 0;}
+.tabSection{margin: 20px auto; width: 1170px; padding: 0;}
+.clearfix{clear: both;}
+
+.tabArea{float: left; margin: 0; padding: 0;}
+.tabArea li{float: left; list-style: none; padding: 10px 20px; cursor: pointer; border: solid 1px #ccc;}
+.tabArea li:hover{background-color: #000; color: #fff;}
+.tabArea li.active{background-color: #000; color: #fff;}
+
+.contantArea {float: left; width: 100%; margin: -1px 0 0; padding: 10px 20px; border: solid 1px #ccc;}
+.tab2, .tab3, .tab4, .tab5{display: none;}

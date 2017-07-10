@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>tab system</title>
+	<link rel="stylesheet" href="style.css">
+	
+</head>
+<body>
+	<div class="tabSection">
+		<ul class="tabArea">
+			<li data-target=".tab1" class="active">Tab 1</li>
+			<li data-target=".tab2">Tab 2</li>
+			<li data-target=".tab3">Tab 3</li>
+			<li data-target=".tab4">Tab 4</li>
+			<li data-target=".tab5">Tab 5</li><li data-target=".tab5">Tab 5</li>
+		</ul>
+		<div class="contantArea">
+			<div class="tab1">
+				Tab Area 1
+				<div class="abc">Tab Area 1</div>
+			</div>
+			<div class="tab2">
+				Tab Area 2
+
+				<div class="abc">Tab Area 2</div>
+			</div>
+			<div class="tab3">
+				Tab Area 3
+			</div>
+			<div class="tab4">
+				Tab Area 4
+			</div>
+			<div class="tab5">
+				Tab Area 5
+			</div>
+		</div>
+		<div class="clearfix"></div>
+	</div>
+	
+	<script src="jquery-3.2.1.min.js" type="text/javascript"></script>
+	<script>
+		$(document).ready(function() {
+			$('.tabSection ul li').on('click',function(){
+				var clickId = $(this).attr('data-target')
+				$('.tabSection ul li').removeClass('active')
+				$(this).addClass('active')
+				$(this).addClass('clicked')
+				$('.contantArea > div').hide()
+				$(clickId).show()
+				//$('.'+clickId+' .abc').css('color','red')
+				//var text = $('.'+clickId).html()
+				//alert(text)
+				
+				var n = "5";
+
+				var n2 = 4
+
+				var b = Number(n) + n2
+
+				alert(b) 
+
+					// if ($('.tabSection ul li.clicked').length ==5){
+					// 	alert('hello');
+					// }else if($('.tabSection ul li.clicked').length ==6){
+					// 	alert(111)
+					// }
+				
+			})
+
+
+
+		});
+
+		 //   $('.tabSection ul li').on('click', function() {
+		 //   		var tabButton = $(this).attr('id');
+		 //   		//alert(tabButton);
+		 //   		$('.tabSection ul li').removeClass('active');
+		 //   		if (tabButton == "tab1"){
+		 //   			$(this).addClass('active');
+		 //   			$('.tabSection .contantArea').find('.tab1').css('display', 'block');
+		 //   			$('.tabSection .contantArea').find('.tab2').css('display', 'none');
+		 //   			$('.tabSection .contantArea').find('.tab3').css('display', 'none');
+		 //   			$('.tabSection .contantArea').find('.tab4').css('display', 'none');
+		 //   			$('.tabSection .contantArea').find('.tab5').css('display', 'none');
+		 //   		} else if (tabButton == "tab2"){
+		 //   			$(this).addClass('active');
+		 //   			$('.tabSection .contantArea').find('.tab1').css('display', 'none');
+		 //   			$('.tabSection .contantArea').find('.tab2').css('display', 'block');
+		 //   			$('.tabSection .contantArea').find('.tab3').css('display', 'none');
+		 //   			$('.tabSection .contantArea').find('.tab4').css('display', 'none');
+		 //   			$('.tabSection .contantArea').find('.tab5').css('display', 'none');
+		 //   		} else if (tabButton == "tab3"){
+		 //   			$(this).addClass('active');
+		 //   			$('.tabSection .contantArea').find('.tab1').css('display', 'none');
+		 //   			$('.tabSection .contantArea').find('.tab2').css('display', 'none');
+		 //   			$('.tabSection .contantArea').find('.tab3').css('display', 'block');
+		 //   			$('.tabSection .contantArea').find('.tab4').css('display', 'none');
+		 //   			$('.tabSection .contantArea').find('.tab5').css('display', 'none');
+		 //   		} else if (tabButton == "tab4"){
+		 //   			$(this).addClass('active');
+		 //   			$('.tabSection .contantArea').find('.tab1').css('display', 'none');
+		 //   			$('.tabSection .contantArea').find('.tab2').css('display', 'none');
+		 //   			$('.tabSection .contantArea').find('.tab3').css('display', 'none');
+		 //   			$('.tabSection .contantArea').find('.tab4').css('display', 'block');
+		 //   			$('.tabSection .contantArea').find('.tab5').css('display', 'none');
+		 //   		} else if (tabButton == "tab5"){
+		 //   			$(this).addClass('active');
+		 //   			$('.tabSection .contantArea').find('.tab1').css('display', 'none');
+		 //   			$('.tabSection .contantArea').find('.tab2').css('display', 'none');
+		 //   			$('.tabSection .contantArea').find('.tab3').css('display', 'none');
+		 //   			$('.tabSection .contantArea').find('.tab4').css('display', 'none');
+		 //   			$('.tabSection .contantArea').find('.tab5').css('display', 'block');
+		 //   		} else {
+		   			
+		 //   		}
+
+			// });
+		
+	</script>
+</body>
+</html>
