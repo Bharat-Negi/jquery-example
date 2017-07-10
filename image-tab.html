@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+	<link rel="stylesheet" type="text/css" href="css/style.css" />
+</head>
+<body>
+	<br><br>
+	<div class="container">
+		<div class="row">
+			<div id="imgChange">
+				<div class="col-md-6">
+					<div id="imageBox">
+						image add box
+					</div>
+					<div class="buttonArea text-center">
+						<button class="btn btn-success" type="button">Click</button>
+						<button class="btn btn-danger" type="button">Restore</button>
+					</div>
+				</div>
+				<div class="col-md-6">
+					<div class="img-list">
+						<div class="img-list1">
+							<img src="images/img1-bg.jpg" alt="">
+						</div>
+						<div class="img-list1">
+							<img src="images/img2-bg.jpg" alt="">
+						</div>
+						<div class="img-list1">
+							<img src="images/img3-bg.jpg" alt="">
+						</div>
+						<div class="img-list1">
+							<img src="images/img4-bg.jpg" alt="">
+						</div>
+						<div class="img-list1">
+							<img src="images/img5-bg.jpg" alt="">
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<script src="js/jquery-3.2.1.min.js" type="text/javascript"></script>
+	<script>
+		$(document).ready(function() {
+			$('#imgChange .img-list div').on('click', function() {
+				var imgTab = $(this).attr('');
+				alert(imgTab);
+			});
+		});
+		
+	</script>
+</body>
+</html>
