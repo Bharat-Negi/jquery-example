@@ -41,19 +41,21 @@
 				</div>
 			</div>
 		</div>
+		<br><br><br><br>
+		<button class="btn btn-success red" type="button">Color Change Button</button>
 	</div>
-
+	
 
 	<script src="js/jquery-3.2.1.min.js" type="text/javascript"></script>
 	<script>
 		$(document).ready(function() {
 			var count = 0;
-			//var fullText = $('#imgChange .img-list').html();
+			var fullText = $('#imgChange .img-list').html();
 			var imgTab = $('#imgChange .img-list div').length;
 
 			// add image on left box buy clicking on img
 			$('#imgChange .img-list div').on('click', function() {
-				//var imgTab = $(this).attr('data-target');				
+				//var imgTab = $(this).attr('data-target');
 				var addImg = $(this).html();
 				count++;
 				$(this).remove();
@@ -62,24 +64,25 @@
 
 			// add image on left box buy clicking on button
 			$('#imgChange button.btn-success').on('click', function(){				
-				//var btnaddImg = $('#imgChange .img-list div').html();
-				//count += 1;
-				//var btnNone = $('#imgChange .img-list div[data-target=img-list'+count+']');
-				var btnNone = $('#imgChange .img-list div').length;
-
-				for (i = count; i < $(imgTab); i++) {
-					// statement					
-					$('#imageBox').append(btnaddImg);
-					$(btnNone).remove();
-				};
+				var btnaddImg = $('#imgChange .img-list div').html();
+				count += 1;
+				var btnNone = $('#imgChange .img-list div[data-target=img-list'+count+']');
+									
+				$('#imageBox').append(btnaddImg);
+				$(btnNone).remove();
 								
 			});
 
 			// add image on right box buy clicking on button
-			// $('#imgChange button.btn-danger').on('click', function(){
-			// 	$('#imageBox span').remove();
-			// 	$('.img-list').append(fullText);
-			// });
+			$('#imgChange button.btn-danger').on('click', function(){
+				$('#imageBox').empty();
+				$('.img-list').append(fullText);
+			});
+
+			// button color change
+			$('button.red').on('click', function(){
+				$(this).removeClass('red').addClass('blue').toggleClass('btn-success');
+			})			
 
 		});
 		
