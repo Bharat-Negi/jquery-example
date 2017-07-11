@@ -18,3 +18,5 @@ body{margin: 0; padding: 0;}
 .answer div.col-md-6{margin-bottom: 20px;}
 .answer div.col-md-6 span{padding: 10px 8px; display: block; cursor: pointer;}
 .answer div.col-md-6 span:hover{background-color: #5cb85c; color: #fff;}
+.answer div.col-md-6 span.active{background-color: #5cb85c; color: #fff;}
+.answer div.col-md-6 span.activeRed{background-color: #850000; color: #fff;}
