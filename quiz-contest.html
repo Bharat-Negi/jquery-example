@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+	<link rel="stylesheet" type="text/css" href="css/style.css" />
+</head>
+<body>
+	<br><br>
+	<div class="container">
+		<div class="row">
+			<div id="quiz">
+				<div class="col-md-12">
+					<h1>Question 1</h1>
+					<div class="questionBlock">
+						Eating which of these dishes would qualify one as a non-vegetarian?
+					</div>
+				</div>
+
+				<div class="col-md-12">
+					<div class="answer">
+						<div class="row">
+							<div class="col-md-6" data-target="A">
+								<span>Option 1: Malai Kofta</span>
+							</div>
+							<div class="col-md-6" data-target="B">
+								<span>Option 2: Navratan Korma</span>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-md-6" data-target="C">
+								<span>Option 3: Gatte ki Sabzi</span>
+							</div>
+							<div class="col-md-6" data-target="D">
+								<span>Option 4: Tandoori Raan</span>
+							</div>
+						</div>						
+					</div>					
+				</div>
+
+				<div class="col-md-12">
+					<div class="pull-left">
+						<button class="btn btn-success prev" type="button"><< Previous Question</button>
+					</div>
+					<div class="pull-right">
+						<button class="btn btn-success next" type="button">Next Question >></button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<script src="js/jquery-3.2.1.min.js" type="text/javascript"></script>
+	<script>
+		$(document).ready(function() {			
+			$('#quiz .answer .row div').on('click', function() {
+				var answerTab = $(this).attr('data-target');
+				
+
+			});
+
+		});
+		
+	</script>
+</body>
+</html>

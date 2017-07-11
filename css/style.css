@@ -10,3 +10,11 @@ body{margin: 0; padding: 0;}
 .img-list div{cursor: pointer; text-align: center;}
 .img-list div span{margin-top: 10px; display: block;}
 .img-list div:first-child span{margin-top: 0px;}
+
+/*---- quiz contest css ----*/
+#quiz h1{margin-bottom: 20px; font-size: 30px; margin-top: 0;}
+.questionBlock{margin-bottom: 20px; border: solid 1px #ccc; padding: 15px; font-weight: 600; font-size: 18px;}
+.answer{}
+.answer div.col-md-6{margin-bottom: 20px;}
+.answer div.col-md-6 span{padding: 10px 8px; display: block; cursor: pointer;}
+.answer div.col-md-6 span:hover{background-color: #5cb85c; color: #fff;}
