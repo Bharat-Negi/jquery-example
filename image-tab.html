@@ -43,6 +43,8 @@
 		</div>
 		<br><br><br><br>
 		<button class="btn btn-success red" type="button">Color Change Button</button>
+
+		<button id="btn" class="btn" type="button">Color Change Button</button>
 	</div>
 	
 
@@ -82,8 +84,20 @@
 			// button color change
 			$('button.red').on('click', function(){
 				$(this).removeClass('red').addClass('blue').toggleClass('btn-success');
-			})			
+			})
 
+			// test button
+			$('#btn').css({background: 'red'});
+			$('#btn').on('click', function(){
+				$(this).css({background: 'blue'});
+
+				if($(this).css({background: 'blue'}) || $(this).css({background: 'red'})){
+					$(this).css({background: 'green'})
+				}else{
+					$(this).css({background: 'blue'});
+				}
+			})	
+				
 		});
 		
 	</script>
