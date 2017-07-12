@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Quiz Website</title>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+	<link rel="stylesheet" type="text/css" href="css/style.css" />
+</head>
+<body>
+	<br><br>
+	<div class="container">
+		<div class="row dropdownOne">
+			<div class="col-md-6">
+				<select class="selectpicker form-control">
+					<option label="select">Select</option>
+				  	<option label="red">Red</option>
+				  	<option label="blue">Blue</option>
+				  	<option label="green">Green</option>
+				  	<option label="pink">Pink</option>
+				  	<option label="yellow">Yellow</option>
+				</select>
+			</div>
+			<div class="col-md-6">
+				<div class="big-box"></div>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="countNumber">
+				<h3>10</h3>
+				<button type="button" class="btn btn-success">Add Number</button>
+			</div>
+		</div>
+		<br><br>
+		<div class="row">
+			<div class="countNumberAuto">
+				<p class="m-b-none">Number add automatic after 3 sec</p>
+				<h3>0</h3>				
+			</div>
+		</div>
+	</div>
+
+
+	<script src="js/jquery-3.2.1.min.js" type="text/javascript"></script>
+	<script>
+		$(document).ready(function() {
+			// box color change
+			$('.dropdownOne .selectpicker').on('change', function() {
+				var dropChange = $(this).val();				
+				$('.dropdownOne .big-box').val('select').css('background-color', '#ccc');
+				$('.dropdownOne .big-box').css('background-color', dropChange);
+			});
+
+			// number count section
+
+			var count = parseInt($('.countNumber h3').text(), 10);
+			$('.countNumber button').on('click', function(){
+				count += 1;
+				$('.countNumber h3').empty().append(count);
+			});
+
+			$(document).ready(function() {
+			    var number = parseInt($('.countNumberAuto h3').text(), 10) || 0; // Get the number from h3
+
+			    // Called the function in each second
+			    var interval = setInterval(function() {
+			        $('.countNumberAuto h3').text(number++); // Update the value in h3
+
+			        if (number > 1000) {
+			            clearInterval(interval); // If exceeded 100, clear interval
+			        }
+			    }, 3000); // Run for each second
+			}); 
+
+		});
+		
+	</script>
+</body>
+</html>
