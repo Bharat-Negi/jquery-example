@@ -98,14 +98,10 @@
 			$('.tabBoxSection .thumbnail p + p a').on('click', function(e){
 				e.preventDefault();
 				count += 1;
-				var linkType = $(this).attr('class');
 				var boxHead = $('.tabBoxSection .box'+count).find('div.thumbnail h4').text();
 				var boxBtn = $(this).text();
 
-				//var countAdd = count++;
-
-				alert(boxBtn);
-
+				// alert(boxBtn);
 				$('.modal-title').text(boxHead);
 				$('.modal-body p').text(boxBtn);
 				$('.box'+count).find('.thumbnail').addClass('disable');
