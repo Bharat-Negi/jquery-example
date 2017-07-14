@@ -5,7 +5,7 @@ body{margin: 0; padding: 0;}
 #imageBox{width: 100%; border: solid 1px #ccc; padding: 8px; margin-bottom: 8px; min-height: 400px; text-align: center;}
 #imageBox img{max-width: 100%;}
 #imageBox span{margin-top: 10px; display: block;}
-#imageBox span:first-child{margin-top: 0px;}
+#imageBox span:first-child span{margin-top: 0px;}
 .buttonArea{margin-bottom: 15px;}
 
 button.btn-success.red{background-color: red; border:none; color: #fff;}
