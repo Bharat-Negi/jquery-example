@@ -52,33 +52,46 @@
 	<script>
 		$(document).ready(function() {
 			var count = 0;
-			var fullText = $('#imgChange .img-list').html();
-			var imgTab = $('#imgChange .img-list div').length;
+			// console.log(imgTab);
 
 			// add image on left box buy clicking on img
 			$('#imgChange .img-list div').on('click', function() {
-				//var imgTab = $(this).attr('data-target');
+				var imgTab = $('#imgChange .img-list div').length;					
 				var addImg = $(this).html();
 				count++;
 				$(this).remove();
 				$('#imageBox').append(addImg);
+
+				alert(imgTab);
 			});
 
 			// add image on left box buy clicking on button
-			$('#imgChange button.btn-success').on('click', function(){				
+			$('#imgChange button.btn-success').on('click', function(){
+				var imgTab = $('#imgChange .img-list div').length;				
 				var btnaddImg = $('#imgChange .img-list div').html();
 				count += 1;
 				var btnNone = $('#imgChange .img-list div[data-target=img-list'+count+']');
 									
 				$('#imageBox').append(btnaddImg);
 				$(btnNone).remove();
-								
+				
+				alert(imgTab);
 			});
 
 			// add image on right box buy clicking on button
-			$('#imgChange button.btn-danger').on('click', function(){
-				$('#imageBox').empty();
-				$('.img-list').append(fullText);
+			var fullText = $('#imgChange .img-list').html();
+			function isEmpty(el){ 
+				return !$.trim(el.html())
+			}
+
+			$('#imgChange button.btn-danger').on('click', function(){				
+				if (isEmpty($('#imgChange .img-list'))) {					
+					//alert('hello 1');
+					$('#imageBox').empty();
+					$('.img-list').append(fullText);
+				} else {					
+					//alert('hello 2');
+				}				
 			});
 
 			// button color change
@@ -90,7 +103,6 @@
 			$('#btn').css({background: 'red'});
 			$('#btn').on('click', function(){
 				$(this).css({background: 'blue'});
-
 				if($(this).css({background: 'blue'}) || $(this).css({background: 'red'})){
 					$(this).css({background: 'green'})
 				}else{
