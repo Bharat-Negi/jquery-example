@@ -35,22 +35,17 @@
 			});
 
 			$('.divAddArea button.multiDiv').on('click', function(){
-								var str = "" ;
-								var boo = true;
-
-				for (var i = 1	; i < 50; i++) {
+				var str = "" ;
+				var boo = true;
+				for (var i = 1	; i <= 50; i++) {
 					//str += '<div>'+i+' div </div>';
 					(boo) ? boo = false : boo = true;
 
 					if(boo){
-					$('.divAddArea #divAdd').append('<div style="background:red">'+i+' div </div>')
-
+						$('.divAddArea #divAdd').append('<div style="background:red;color:#fff;">'+i+' div </div>');
 					}else{
-					$('.divAddArea #divAdd').append('<div style="background:blue">'+i+' div </div>')
-
+						$('.divAddArea #divAdd').append('<div style="background:blue;color:#fff;">'+i+' div </div>');
 					}
-
-
 				}
 				//$('.divAddArea #divAdd').append(str)
 
