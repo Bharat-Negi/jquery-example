@@ -13,27 +13,27 @@
 			<div id="quiz">
 				<div class="col-md-12">
 					<h1>Question 1</h1>
-					<div class="questionBlock" rel="d">
-						Eating which of these dishes would qualify one as a non-vegetarian?
+					<div class="questionBlock">
+						<span rel="d">Eating which of these dishes would qualify one as a non-vegetarian?</span>
 					</div>
 				</div>
 
 				<div class="col-md-12">
 					<div class="answer">
 						<div class="row">
-							<div class="col-md-6" data-target="a">
-								<span class="option1">Option 1: Malai Kofta</span>
+							<div class="col-md-6 option1" data-target="a">
+								<span>Option 1: Malai Kofta</span>
 							</div>
-							<div class="col-md-6" data-target="b">
-								<span class="option2">Option 2: Navratan Korma</span>
+							<div class="col-md-6 option2" data-target="b">
+								<span>Option 2: Navratan Korma</span>
 							</div>
 						</div>
 						<div class="row">
-							<div class="col-md-6" data-target="c">
-								<span class="option3">Option 3: Gatte ki Sabzi</span>
+							<div class="col-md-6 option3" data-target="c">
+								<span>Option 3: Gatte ki Sabzi</span>
 							</div>
-							<div class="col-md-6" data-target="d">
-								<span class="option4">Option 4: Tandoori Raan</span>
+							<div class="col-md-6 option4" data-target="d">
+								<span>Option 4: Tandoori Raan</span>
 							</div>
 						</div>						
 					</div>					
@@ -44,12 +44,9 @@
 						<button class="btn btn-success prev" type="button"><< Previous Question</button>
 					</div>
 					<div class="pull-right">
-						<button class="btn btn-success next" type="button">Next Question >></button>
+						<button id="getData" class="btn btn-success next" type="button">Next Question >></button>
 					</div>
-				</div>
-
-				<button id="getData">Get JSON data</button>
-				
+				</div>				
 			</div>
 		</div>
 	</div>
@@ -60,7 +57,7 @@
 		$(document).ready(function() {	
 			$('#quiz .answer .row div').on('click', function() {
 				var answerTab = $(this).attr('data-target');
-				var questionTab = $('#quiz .questionBlock').attr('rel');
+				var questionTab = $('#quiz .questionBlock span').attr('rel');
 
 				$('#quiz .answer .row div').find('span').removeClass('active');
 				$('#quiz .answer .row div').find('span').removeClass('activeRed');
@@ -86,12 +83,35 @@
 				success: function(data){
 					$(data.quiz).each(function(index, value){
 						var count = 0;
-						var option = $(this).eq(0);
+						// var option = $(value);
+
+						console.log(value);
 
 						$('button#getData').on('click', function(){
 							count += 1;
 
-							console.log(value.optionTwo);
+							var idTab = $(value.question1);
+							console.log(idTab);
+
+							if (index == value.question1) {
+								// statement
+								$('#quiz h1').html(value.title);
+								$('#quiz .col-md-12 h1 +').empty().append('<span rel='+ value.answer + '>' + value.question + '</span>');
+								$('#quiz .option1').empty().append('<span> Option 1: ' + value.optionOne + '</span>');
+								$('#quiz .option2').empty().append('<span> Option 2: ' + value.optionTwo + '</span>');
+								$('#quiz .option3').empty().append('<span> Option 3: ' + value.optionThree + '</span>');
+								$('#quiz .option4').empty().append('<span> Option 4: ' + value.optionFour + '</span>');
+							} else {
+								// statement
+							}
+
+							// $('#quiz h1').html(value.title);
+							// $('#quiz .col-md-12 h1 +').empty().append('<span rel='+ value.answer + '>' + value.question + '</span>');
+							// $('#quiz .option1').empty().append('<span> Option 1: ' + value.optionOne + '</span>');
+							// $('#quiz .option2').empty().append('<span> Option 2: ' + value.optionTwo + '</span>');
+							// $('#quiz .option3').empty().append('<span> Option 3: ' + value.optionThree + '</span>');
+							// $('#quiz .option4').empty().append('<span> Option 4: ' + value.optionFour + '</span>');
+								
 						});
 
 					});
