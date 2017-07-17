@@ -13,7 +13,7 @@
 			<div id="quiz">
 				<div class="col-md-12">
 					<h1>Question 1</h1>
-					<div class="questionBlock">
+					<div class="questionBlock" rel="d">
 						Eating which of these dishes would qualify one as a non-vegetarian?
 					</div>
 				</div>
@@ -21,19 +21,19 @@
 				<div class="col-md-12">
 					<div class="answer">
 						<div class="row">
-							<div class="col-md-6" data-target="A">
-								<span>Option 1: Malai Kofta</span>
+							<div class="col-md-6" data-target="a">
+								<span class="option1">Option 1: Malai Kofta</span>
 							</div>
-							<div class="col-md-6" data-target="B">
-								<span>Option 2: Navratan Korma</span>
+							<div class="col-md-6" data-target="b">
+								<span class="option2">Option 2: Navratan Korma</span>
 							</div>
 						</div>
 						<div class="row">
-							<div class="col-md-6" data-target="C">
-								<span>Option 3: Gatte ki Sabzi</span>
+							<div class="col-md-6" data-target="c">
+								<span class="option3">Option 3: Gatte ki Sabzi</span>
 							</div>
-							<div class="col-md-6" data-target="D">
-								<span>Option 4: Tandoori Raan</span>
+							<div class="col-md-6" data-target="d">
+								<span class="option4">Option 4: Tandoori Raan</span>
 							</div>
 						</div>						
 					</div>					
@@ -47,20 +47,25 @@
 						<button class="btn btn-success next" type="button">Next Question >></button>
 					</div>
 				</div>
+
+				<button id="getData">Get JSON data</button>
+				
 			</div>
 		</div>
 	</div>
 
 
-	<script src="js/jquery-3.2.1.min.js" type="text/javascript"></script>
+	<script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
 	<script>
 		$(document).ready(function() {	
 			$('#quiz .answer .row div').on('click', function() {
 				var answerTab = $(this).attr('data-target');
+				var questionTab = $('#quiz .questionBlock').attr('rel');
+
 				$('#quiz .answer .row div').find('span').removeClass('active');
 				$('#quiz .answer .row div').find('span').removeClass('activeRed');
 
-				if (answerTab == 'D') {
+				if (answerTab == questionTab) {
 					// statement
 					alert('this is correct answer');
 					$(this).find('span').addClass('active');
@@ -71,6 +76,29 @@
 				}
 
 			});
+
+		
+			$.ajax({
+				url: 'quizContestDate.json',
+				dataType: 'json',
+				type: 'get',				
+				cache: false,
+				success: function(data){
+					$(data.quiz).each(function(index, value){
+						var count = 0;
+						var option = $(this).eq(0);
+
+						$('button#getData').on('click', function(){
+							count += 1;
+
+							console.log(value.optionTwo);
+						});
+
+					});
+				}
+			});
+			
+			
 
 		});
 		

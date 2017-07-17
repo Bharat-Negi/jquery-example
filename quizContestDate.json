@@ -1,0 +1,34 @@
+{
+	"quiz": [
+		{
+			"id": 1,
+			"title": "Question 1",
+			"question": "Eating which of these dishes would qualify one as a non-vegetarian?",
+			"answer": "d",
+			"optionOne": "Malai Kofta",
+			"optionTwo": "Navratan Korma",
+			"optionThree": "Gatte ki Sabzi",
+			"optionFour": "Tandoori Raan"
+		},
+		{
+			"id": 2,
+			"title": "Question 2",
+			"question": "Eating which of these dishes would qualify one as a non-vegetarian?",
+			"answer": "a",
+			"optionOne": "Malai Kofta 2",
+			"optionTwo": "Navratan Korma 2",
+			"optionThree": "Gatte ki Sabzi 2",
+			"optionFour": "Tandoori Raan 2"
+		},
+		{
+			"id": 3,
+			"title": "Question 3",
+			"question": "Eating which of these dishes would qualify one as a non-vegetarian?",
+			"answer": "c",
+			"optionOne": "Malai Kofta 3",
+			"optionTwo": "Navratan Korma 3",
+			"optionThree": "Gatte ki Sabzi 3",
+			"optionFour": "Tandoori Raan 3"
+		}
+	]
+}
