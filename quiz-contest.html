@@ -83,26 +83,23 @@
 				success: function(data){
 					$(data.quiz).each(function(index, value){
 						var count = 0;
-						// var option = $(value);
-
-						console.log(value);
 
 						$('button#getData').on('click', function(){
-							count += 1;
+							// count++;
 
-							var idTab = $(value.question1);
-							console.log(idTab);
+							var idTab = $(index).length.count;
+							console.log(index);							
 
-							if (index == value.question1) {
+							if (index == idTab) {
 								// statement
-								$('#quiz h1').html(value.title);
-								$('#quiz .col-md-12 h1 +').empty().append('<span rel='+ value.answer + '>' + value.question + '</span>');
-								$('#quiz .option1').empty().append('<span> Option 1: ' + value.optionOne + '</span>');
-								$('#quiz .option2').empty().append('<span> Option 2: ' + value.optionTwo + '</span>');
-								$('#quiz .option3').empty().append('<span> Option 3: ' + value.optionThree + '</span>');
-								$('#quiz .option4').empty().append('<span> Option 4: ' + value.optionFour + '</span>');
+								$('#quiz h1').html(value.question1.title);
+								$('#quiz .col-md-12 h1 +').empty().append('<span rel='+ value.question1.answer + '>' + value.question1.question + '</span>');
+							} else if (index == 1){
+								// statement
+								$('#quiz h1').html(value.question2.title);
+								$('#quiz .col-md-12 h1 +').empty().append('<span rel='+ value.question2.answer + '>' + value.question2.question + '</span>');
 							} else {
-								// statement
+
 							}
 
 							// $('#quiz h1').html(value.title);
@@ -116,6 +113,7 @@
 
 					});
 				}
+
 			});
 			
 			
