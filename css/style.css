@@ -37,3 +37,8 @@ button.btn-success:hover{background-color: green;}
 
 .disable{opacity: 0.3;}
 .disable .caption p + p a{pointer-events: none;}
+
+/*---- load html files ----*/
+.mainArea{ width: 100%; margin: 5px 0 0; padding: 20px; border: solid 1px #000; }
+.mainArea h1{margin: 0 0 20px; padding: 0;}
+.mainArea .pageLoad{width: 100%; min-height: 500px; margin: 0; padding: 0;}
