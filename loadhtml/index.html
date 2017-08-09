@@ -25,8 +25,8 @@
 						<button type="button" class="btn btn-primary"> Stop</button>
 					</div>
 					<div class="pull-right">
-						<button type="button" class="btn btn-primary"> Previous</button>
-						<button type="button" class="btn btn-primary"> Next</button>
+						<button type="button" id="previous" class="btn btn-primary"> Previous</button>
+						<button type="button" id="next" class="btn btn-primary"> Next</button>
 					</div>
 				</div>
 			</div>
@@ -34,5 +34,22 @@
 	</div>
 
 	<script type="text/javascript" src="../js/jquery-3.2.1.min.js"></script>
+	<script>
+		$(document).ready(function() {
+			var count = 0;
+			count++
+	        $('.mainArea .pageLoad').load('htmlpages/page'+count+'.html');
+
+	        $('#next').click(function () {
+	        	count++
+	            $('.mainArea .pageLoad').load('htmlpages/page'+count+'.html');
+	        }); 
+	        $('#previous').click(function () {
+	        	count--
+	            $('.mainArea .pageLoad').load('htmlpages/page'+count+'.html'); 
+	        }); 
+
+		});
+	</script>
 </body>
 </html>
