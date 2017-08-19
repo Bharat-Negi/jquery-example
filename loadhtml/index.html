@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title>Document</title>
-	
+
 	<link rel="stylesheet" type="text/css" href="../css/bootstrap.css" />
 	<link rel="stylesheet" type="text/css" href="../css/style.css" />
 </head>
@@ -24,8 +24,8 @@
 			<div class="row">
 				<div class="col-md-12">
 					<div class="pull-left">
-						<button type="button" class="btn btn-primary"> Start</button>
-						<button type="button" class="btn btn-primary"> Stop</button>
+						<button type="button" id="start" class="btn btn-primary"> Start</button>
+						<button type="button" id="stop" class="btn btn-primary"> Stop</button>
 					</div>
 					<div class="pull-right">
 						<button type="button" id="previous" class="btn btn-primary"> Previous</button>
@@ -39,19 +39,22 @@
 	<script type="text/javascript" src="../js/jquery-3.2.1.min.js"></script>
 	<script>
 		$(document).ready(function() {
-			var count = 0;
-			count++
+			var count = 1;
 	        $('.mainArea .pageLoad').load('htmlpages/page'+count+'.html');
+
+	        // $('#start').on('click', function () {
+	        // 	count++
+	        // 	$('.mainArea .pageLoad').load('htmlpages/page'+count+'.html');
+	        // });
 
 	        $('#next').click(function () {
 	        	count++
 	        	$('.mainArea .pageLoad').load('htmlpages/page'+count+'.html');
-	        }); 
+	        });
 	        $('#previous').click(function () {
 	        	count--
 	            $('.mainArea .pageLoad').load('htmlpages/page'+count+'.html');
-	        }); 
-
+	        });
 		});
 	</script>
 </body>
