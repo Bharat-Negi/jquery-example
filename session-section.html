@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Step Box</title>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+	<link rel="stylesheet" type="text/css" href="css/style.css" />
+</head>
+<body>
+	<br><br>
+	<div class="container">
+		
+		<div class="col-md-12">
+			<div class="boxAreaColor"></div>
+			
+			<div class="row text-center colorChange">
+				<a href="#" id="redcolor" class="btn btn-danger">Red Color</a>
+	            <a href="#" id="greencolor" class="btn btn-success">Green Color</a>
+			</div>
+
+		</div>
+
+	</div>
+
+	<script src="js/jquery-3.2.1.min.js" type="text/javascript"></script>
+	<script src="js/bootstrap.min.js" type="text/javascript"></script>
+	<script>
+		$(document).ready(function() {
+
+			$('.colorChange a#redcolor').on('click', function() {				
+				$('.boxAreaColor').removeClass('boxAreaColor2');
+				sessionStorage.setItem('myCat', 'red');
+			});
+			$('.colorChange a#greencolor').on('click', function() {				
+				$('.boxAreaColor').addClass('boxAreaColor2');
+				sessionStorage.setItem('myCat', 'green');
+			});
+
+			if ((sessionStorage.getItem('myCat')!='red')) {
+				$('.boxAreaColor').addClass('boxAreaColor2');
+			} else {
+				$('.boxAreaColor').addClass('boxAreaColor');
+			}
+
+		});
+		
+	</script>
+</body>
+</html>
