@@ -32,6 +32,34 @@
                 $.removeCookie("Name")
             });
         });
+
+        //add data in local storage
+        var newStudent = [{
+             "name":        "John",
+             "age":         21,
+             "nationality": "Spanish"
+         }];
+
+        localStorage.setItem("students", JSON.stringify(newStudent));
+
+        var retrievedObject = localStorage.getItem("students");
+        var stored          = JSON.parse(retrievedObject); //<----newStudent1
+
+        var newStudent2 = [{
+            "name":        "Mary",
+            "age":         20,
+            "nationality": "German"
+        }];
+
+
+        var stored = Object.assign(stored, newStudent2); //<----Here newStudent1 is replaced by newStudent2
+
+
+        localStorage.setItem("students", JSON.stringify(stored)); // Here newStudent2 is replacing old object on localStorage
+        var result = localStorage.getItem("students");
+
+        console.log(result);
+
     </script>
 </body>
 </html>
